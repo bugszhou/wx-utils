@@ -1,10 +1,11 @@
 const path = require('path'),
+  { CleanWebpackPlugin } = require('clean-webpack-plugin'),
   TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   entry: {
-    mksign: './src/index.js',
-    'mksign.min': './src/index.js',
+    'wx-lodash': './src/index.js',
+    'wx-lodash.min': './src/index.js',
   },
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -31,4 +32,7 @@ module.exports = {
       }),
     ],
   },
+  plugins: [
+    new CleanWebpackPlugin(),
+  ],
 };

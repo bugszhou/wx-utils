@@ -1,12 +1,18 @@
 {
   "name": "wx-lodash",
-  "version": "1.1.2",
+  "version": "1.1.7",
   "description": "微信公众号工具类",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --ext .js src -c .eslintrc.js",
+    "fix": "npm run lint -- --fix",
+    "husky": "node node_modules/husky/lib/installer/bin install",
+    "unhusky": "node node_modules/husky/lib/installer/bin uninstall",
+    "postversion": "ziu cl -p angular -i CHANGELOG.md -s -r 1000 && git add CHANGELOG.md package.json && git add -u",
+    "commit": "ziu commit",
     "build": "webpack",
-    "prepare": "npm run build"
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -32,9 +38,19 @@
     "@babel/plugin-transform-runtime": "^7.5.0",
     "@babel/plugin-transform-strict-mode": "^7.2.0",
     "@babel/preset-env": "^7.5.0",
+    "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "commitlint": "^8.0.0",
+    "eslint": "^6.0.1",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.2",
+    "husky": "^2.4.1",
     "terser-webpack-plugin": "^1.3.0",
     "webpack": "^4.35.2",
-    "webpack-cli": "^3.3.5"
+    "webpack-cli": "^3.3.5",
+    "ziu": "^1.6.0"
   }
 }

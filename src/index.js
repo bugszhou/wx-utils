@@ -4,15 +4,15 @@
 export const name = 'wx-lodash';
 
 function setFontSize() {
-  setTimeout(function() {
-    WeixinJSBridge.invoke('setFontSizeCallback', { "fontSize": 0 });
-    WeixinJSBridge.on('menu:setfont', function() {
-      WeixinJSBridge.invoke('setFontSizeCallback', { 'fontSize': 0 });
+  setTimeout(() => {
+    WeixinJSBridge.invoke('setFontSizeCallback', { fontSize: 0 });
+    WeixinJSBridge.on('menu:setfont', () => {
+      WeixinJSBridge.invoke('setFontSizeCallback', { fontSize: 0 });
     });
   }, 0);
 }
 
-export function forbidUpdateWxFont({open = false} = {}) {
+export function forbidUpdateWxFont({ open = false } = {}) {
   if (open) {
     return false;
   }
@@ -21,9 +21,9 @@ export function forbidUpdateWxFont({open = false} = {}) {
     return false;
   }
   if (typeof WeixinJSBridge == "undefined") {
-    return document.addEventListener("WeixinJSBridgeReady", function() {
+    return document.addEventListener("WeixinJSBridgeReady", () => {
       setFontSize();
     });
   }
-  setFontSize();
+  return setFontSize();
 }
