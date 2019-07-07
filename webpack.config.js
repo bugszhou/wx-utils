@@ -10,7 +10,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: '[name].js',
-    library: 'mksign',
+    library: 'wx-lodash',
     libraryExport: 'default',
     libraryTarget: 'umd',
   },

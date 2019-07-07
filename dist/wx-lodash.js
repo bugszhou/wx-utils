@@ -109,11 +109,11 @@ var name = 'wx-lodash';
 function setFontSize() {
   setTimeout(function () {
     WeixinJSBridge.invoke('setFontSizeCallback', {
-      "fontSize": 0
+      fontSize: 0
     });
     WeixinJSBridge.on('menu:setfont', function () {
       WeixinJSBridge.invoke('setFontSizeCallback', {
-        'fontSize': 0
+        fontSize: 0
       });
     });
   }, 0);
@@ -139,7 +139,7 @@ function forbidUpdateWxFont() {
     });
   }
 
-  setFontSize();
+  return setFontSize();
 }
 
 /***/ })
