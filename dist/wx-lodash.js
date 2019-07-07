@@ -4,9 +4,9 @@
 	else if(typeof define === 'function' && define.amd)
 		define([], factory);
 	else if(typeof exports === 'object')
-		exports["mksign"] = factory();
+		exports["wx-lodash"] = factory();
 	else
-		root["mksign"] = factory();
+		root["wx-lodash"] = factory();
 })(window, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
