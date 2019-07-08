@@ -11,7 +11,7 @@ module.exports = {
     path: path.resolve(__dirname, './dist'),
     filename: '[name].js',
     library: 'wxLodash',
-    libraryExport: 'default',
+    libraryExport: '',
     libraryTarget: 'umd',
   },
   mode: 'none',

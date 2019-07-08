@@ -4,9 +4,9 @@
 	else if(typeof define === 'function' && define.amd)
 		define([], factory);
 	else if(typeof exports === 'object')
-		exports["wx-lodash"] = factory();
+		exports["wxLodash"] = factory();
 	else
-		root["wx-lodash"] = factory();
+		root["wxLodash"] = factory();
 })(window, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -143,5 +143,5 @@ function forbidUpdateWxFont() {
 }
 
 /***/ })
-/******/ ])["default"];
+/******/ ]);
 });
